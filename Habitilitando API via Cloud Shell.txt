@@ -1,0 +1,10 @@
+Habilitando API via Cloud Shell [1:06:00]:
+
+gscloud services enable \
+artifactregistry.googleapis.com \
+cloudfunctions.googleapis.com \
+cloudbuild.googleapis.com \
+eventarc.googleapis.com \
+run.googleapis.com \
+logging.googleapis.com \
+pubsub.googleapis.com \
