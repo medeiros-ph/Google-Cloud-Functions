@@ -1,0 +1,15 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - gcloud
+  - functions
+  - deploy
+  - cf_sms
+  - --region=us-central1
+  - --source=https://source.developers.google.com/projects/cloud-functions01/repos/github_gabrielosluz_stack_cloud_functions/moveable-aliases/main/paths/cf_sms
+  - --trigger-topic=cf_sms
+  - --runtime=python39
+  - --memory=512MB
+  - --project=cloud-functions01
+  - --entry-point=hello_pubsub
+  - --update-labels=course=cloud_functions,env=dev,layer=raw
