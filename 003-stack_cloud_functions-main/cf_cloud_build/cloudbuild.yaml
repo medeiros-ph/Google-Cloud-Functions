@@ -1,0 +1,16 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - gcloud
+  - functions
+  - deploy
+  - cf_cloud_build
+  - --region=us-central1
+  - --allow-unauthenticated
+  - --source=https://source.developers.google.com/projects/cloud-functions01/repos/github_gabrielosluz_stack_cloud_functions/moveable-aliases/main/paths/cf_cloud_build
+  - --trigger-http
+  - --runtime=python39
+  - --memory=256MB
+  - --project=cloud-functions01
+  - --entry-point=hello_world
+  - --update-labels=course=cloud_functions,env=dev,layer=raw
