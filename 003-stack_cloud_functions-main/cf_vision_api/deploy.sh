@@ -1,0 +1,1 @@
+gcloud functions deploy cf_vision_api --region=us-central1 --runtime python37 --trigger-bucket=stack-cf-vision-api-input-78652391 --project=cloud-functions01 --entry-point=detect_face
