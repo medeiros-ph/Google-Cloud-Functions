@@ -1,0 +1,17 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - gcloud
+  - functions
+  - deploy
+  - cf_csv_to_parquet
+  - --region=us-central1
+  - --allow-unauthenticated
+  - --source=https://source.developers.google.com/projects/cloud-functions01/repos/github_gabrielosluz_stack_cloud_functions/moveable-aliases/main/paths/cf_csv_to_parquet
+  - --trigger-bucket=stack-cf-data-pipeline-raw6832523
+  - --runtime=python39
+  - --memory=2048MB
+  - --project=cloud-functions01
+  - --entry-point=main
+  - --set-env-vars=GCP_PROJECT=cloud-functions01,BUCKET_RAW=stack-cf-data-pipeline-raw6832523,BUCKET_HIST=stack-cf-data-pipeline-hist98719876481
+  - --update-labels=course=cloud_functions,env=dev,layer=raw
