@@ -1,0 +1,17 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - gcloud
+  - functions
+  - deploy
+  - cf_parquet_to_bq
+  - --region=us-central1
+  - --allow-unauthenticated
+  - --source=https://source.developers.google.com/projects/cloud-functions01/repos/github_gabrielosluz_stack_cloud_functions/moveable-aliases/main/paths/cf_parquet_to_bigquery
+  - --trigger-bucket=stack-cf-data-pipeline-hist98719876481
+  - --runtime=python39
+  - --memory=2048MB
+  - --project=cloud-functions01
+  - --entry-point=main
+  - --set-env-vars=GCP_PROJECT=cloud-functions01,BUCKET_HIST=stack-cf-data-pipeline-hist98719876481,BQ_DESTINATION_DATASET=stack_data_pipeline,BQ_DESTINATION_TABLE=tb_stack_data_pipeline
+  - --update-labels=course=cloud_functions,env=dev,layer=raw
